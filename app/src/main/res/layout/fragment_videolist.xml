@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!-- tab1 -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/text_live"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_tab_pressed"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:gravity="center"
+                android:text="直播"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/image_live"
+                android:layout_width="70dp"
+                android:layout_height="3dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:src="@drawable/tab_selected"
+                android:visibility="gone"/>
+        </FrameLayout>
+        <!-- tab2 -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/text_vod"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="回放"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/image_vod"
+                android:layout_width="70dp"
+                android:layout_height="3dp"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal|bottom"
+                android:src="@drawable/tab_selected"/>
+        </FrameLayout>
+        <!-- tab3 -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/text_ugc"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="小视频"
+                android:textColor="#777"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/image_ugc"
+                android:layout_width="70dp"
+                android:layout_height="3dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:src="@drawable/tab_selected"
+                android:visibility="invisible"/>
+        </FrameLayout>
+
+    </LinearLayout>
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/tab_layout"
+        android:background="#D8D8D8">
+    </FrameLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_layout">
+
+        <GridView
+            android:id="@+id/live_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:numColumns="1"
+            android:background="#efefef"
+            android:divider="@color/colorActivityBackground"
+            android:dividerHeight="5dp" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <TextView
+        android:id="@+id/tv_listview_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawablePadding="20dp"
+        android:drawableTop="@drawable/list_empty_app"
+        android:gravity="center"
+        android:text="这里空荡荡，没有直播~"
+        android:textColor="#777"
+        android:textSize="16sp" />
+
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+
+</RelativeLayout>
