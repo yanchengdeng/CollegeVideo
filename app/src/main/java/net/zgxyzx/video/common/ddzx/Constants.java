@@ -3,6 +3,7 @@ package net.zgxyzx.video.common.ddzx;
 
 public class Constants {
 
+    //TODO 测试环境  正式发布环境切换
     public static final String BASE_NAME =SysDebug.IS_DEBUG? ".dadaodata.com/":".zgxyzx.net/";
 //    public static final String BASE_URL = "http://192.168.0.132/zhibo/trunk/public/api/";
     public static final String BASE_URL = "http://live.api"+BASE_NAME+"api/";
